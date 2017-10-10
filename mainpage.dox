@@ -1,0 +1,248 @@
+/**
+
+\mainpage A Main page
+
+[TOC]
+
+
+\brief Brief explanation
+ここに簡単な説明が入ります．
+このページは研究結果をまとめるためのにdoxygenを乱用するための
+使い方をまとめたものです．\n
+
+\details Detail explanation
+ここに詳しい説明が入ります．
+研究結果をまとめるときによく使いそうなコマンドが以下にまとめられています．
+もし，面白い情報やより，説明がわかりやすくなりそうなコマンドが
+あったら，順次追加していく予定です．
+
+
+\author Harumo Sasatake
+
+~~~{.sh}
+\author Harumo Sasatake
+~~~
+
+\version 1.0
+
+~~~{.sh}
+\version version num
+~~~
+
+\date 2017-8-16
+
+~~~{.sh}
+\date 2017-*-**
+~~~
+
+\copyright GPL/LGPL/MIT
+
+~~~{.sh}
+\copyright ***
+~~~
+
+\section s1 Section1 
+
+~~~
+\section \<section name> (section title)
+~~~
+
+\subsection s2 Subsection2
+
+~~~
+\subsection \<section name> (section title)
+~~~
+
+\subsubsection s3 Subsubsection3
+
+~~~
+\subsubsection \<section name> (section title)
+~~~
+
+\section sp_ex The special expression
+
+\subsection special_expression The special expression
+
+\attention 注意すべきリスト
+\warning 警告
+\note 注意事項
+\todo TODO
+\pre    前提条件
+\post   事後条件
+\bug    バグ
+
+\subsection expression The special expression
+
+\par A paragraph title
+これは段落です．この段落は空行もしくは，
+他のセクションの導入コマンドで終了します．
+
+\code{.sh}
+\par paragraph_title
+\endcode
+
+\remarks
+これは注釈です．この注釈を記述するための段落は，
+空行，もしくは他のセクションの導入コマンドで終了します．
+
+\code{.sh}
+\remarks
+\endcode
+
+\subsubsection font The fonts
+\li \a Italic 
+\li \b Bold   
+\li \c Type \c writer \c font (expressing code)
+
+~~~{.sh}
+\li \a Italic 
+\li \b Bold   
+\li \c Type_writer_font 
+~~~
+
+\subsubsection list list<doxygen version | Nest is not available>
+\li リスト表示1
+\li リスト表示2
+\li リスト表示3
+
+\code{.sh}
+\li リスト表示1
+\li リスト表示2
+\li リスト表示3
+\endcode
+
+\section misc The other expression
+
+\subsection hightlighting Code syntax highlighting
+
+\code{.cpp}
+int main(void);
+\endcode
+
+
+\subsection dot Graphviz
+\dot
+digraph example {
+	node [shape=record, fontsize=10];
+	b [ label="class B"];
+	c [ label="class C"];
+	b -> c [arrowhead="open", style="dashed"];
+}
+\enddot
+
+\code{.dot}
+\dot
+digraph example {
+	node [shape=record, fontsize=10];
+	b [ label="class B"];
+	c [ label="class C"];
+	b -> c [arrowhead="open", style="dashed"];
+}
+\enddot
+\endcode
+
+\section md The Markdown support
+
+### 見出し
+ヘッダにラベル付をすることができます．
+
+# h1 {#head1}
+## h2
+### h3
+#### h4
+#### h5
+
+### リンク
+webサイトへのリンクも，インラインリンクも，相対パスによる
+PC内部のhtmlへのリンクも可能です．
+
+[here](http://hello)
+
+~~~{.sh}
+[here](http://hello)
+~~~
+
+[The useful command](@ref s1)
+
+~~~{.sh}
+[The useful command](@ref s1)
+~~~
+
+[H1](#head1)
+
+~~~{.sh}
+[H1](#head1)
+~~~
+
+
+### リスト表示<markdown version Nest is available>
+- list1
+ - list1.1
+- list2
+- list3
+ - list3.1
+  - list3.2
+   - list3.3
+
+### 引用
+> quate\n
+> quate\n
+> quate
+
+### Code
+バッククオートではなく**チルダ**によりコードブロックを作成します．
+
+~~~{.cpp}
+int main(void)
+~~~
+
+### 水平線
+
+---
+
+### 強調
+*a*
+
+\section edit The Editing
+Type the following command, when dox file is edited.
+
+The command makes doxygen command is run every 10 sec.
+
+\code{.shell}
+watch -n 10 doxygen Doxyfile
+\endcode
+
+\section css extra css
+表示をかっこ良くするためにお好みのCSSを使用することができます．
+CSSは先人がいくつか作っているので，それをダウンロードしましょう．
+このページで試用しているCSSは以下のgithubからダウンロードしてきたものです．
+
+[doxygen-theme](https://github.com/nnen/doxygen-theme)
+
+Doxyfileのある場所に
+
+- customdoxygen.css
+- DoxygenLayout.xml
+
+をコピーしましょう．
+
+そして，Doxyfileの
+
+- HTML_EXTRA_STYLESHEET =
+- LAYOUT_FILE =
+
+の項目に先ほどコピーしたファイルを設定しましょう
+
+- HTML_EXTRA_STYLESHEET = ./customdoxygen.css
+- LAYOUT_FILE = ./DoxygenLayout.xml
+
+最後に
+
+~~~{.sh}
+doxygen Doxyfile
+~~~
+
+として，コマンドを走らせると
+CSSが適用されたものが出来上がります．
+**/
+
