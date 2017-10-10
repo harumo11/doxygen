@@ -2,7 +2,8 @@
 
 body, table, div, p, dl {
 	// font: 400 14px/22px Roboto,sans-serif;
-	font: 13px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+	font: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+	line-height: 1.6;
 }
 
 /* @group Heading Levels */
@@ -51,12 +52,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 28px;
+	//font-size: 28px;
+	font-size: 33px;
 }
 
 h2 {
 	color: rgb(60, 76, 108);
-	font-size: 24px;
+	font-size: 26px;
 	font-weight: normal;
 	margin: 42px 0px 20px 0px;
 }
