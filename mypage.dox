@@ -3,7 +3,7 @@
 \page mypage
 
 ページ上部にユーザー定義のタブを加えることができます．
-そのためには，**DoxygenLayout.xml**に変更を加える必要があります．
+そのためには，DoxygenLayout.xmlに変更を加える必要があります．
 
 DoxygenLayout.xmlの最初の方にある<navindex>の中に下記の要素を加えると
 今回のようにタブを作成することが可能です．
@@ -13,6 +13,25 @@ DoxygenLayout.xmlの最初の方にある<navindex>の中に下記の要素を�
         <tab type="user" url="https://www.google.com" title="google" />
         <tab type="user" url="@ref mypage" title="My page"/>
     </tab>
+\endcode
+
+また，加えたいファイルがDoxyfileと同じディレクトリにあれば上記の方法で
+いいのですが，別のディレクトリにある場合，そのディレクトリもDoxyfileの
+コンパイルに加える必要があります．
+
+その場合，Doxyfileを下記のように変更してコンパイル時に参照するディレクトリ
+を増やすことができます．（デフォルトでは，Doxyfileと同じディレクトリしか
+参照していません)
+
+この項目を
+\code{.xml}
+INPUT			= . \
+\endcode
+
+このように
+\code{.xml}
+INPUT			= . \
+				  .mypage \
 \endcode
 
 
