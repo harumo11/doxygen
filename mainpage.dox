@@ -2,19 +2,24 @@
 
 \mainpage A Main page
 
-[TOC]
 
-
-\brief Brief explanation
 ここに簡単な説明が入ります．
 このページは研究結果をまとめるためのにdoxygenを乱用するための
-使い方をまとめたものです．\n
+使い方をまとめたものです．
 
-\details Detail explanation
-ここに詳しい説明が入ります．
 研究結果をまとめるときによく使いそうなコマンドが以下にまとめられています．
 もし，面白い情報やより，説明がわかりやすくなりそうなコマンドが
 あったら，順次追加していく予定です．
+
+<HR>
+
+\section abst 概要
+
+[TOC]
+TOC Table of Contents. つまり目次が作られます．
+~~~{.sh}
+[TOC]
+~~~
 
 
 \author Harumo Sasatake
@@ -41,44 +46,81 @@
 \copyright ***
 ~~~
 
+<HR>
+
+\section section_explanation セクション
+sectionコマンドにより，文章内を章，節などに分類することができます．
+大きさはsubsubsectionまで使用できます．
+
 \section s1 Section1 
 
-~~~
-\section \<section name> (section title)
-~~~
+\code
+\section s1 Section1
+\endcode
+
+s1はページ内リンクを貼るときのURLとして使えます．
+そのため，同じものが２つあってはいけません．
+[Section1へのリンクはこんな感じです](@ref s1)
+Section1は章のタイトルです．自由に付けましょう.
 
 \subsection s2 Subsection2
 
-~~~
-\subsection \<section name> (section title)
-~~~
+\code
+\subsection <section name> (section title)
+\endcode
 
 \subsubsection s3 Subsubsection3
 
-~~~
-\subsubsection \<section name> (section title)
-~~~
+\code
+\subsubsection <section name> (section title)
+\endcode
 
-\section sp_ex The special expression
+<HR>
 
-\subsection special_expression The special expression
+\section link リンク
+\subsection internal_link ページ内リンク
+sectionコマンドの<section name>をURLのように使用して
+ページ内リンクを貼ることができます．
+
+[Section1へのリンクはこんな感じです](@ref s1)
+
+\code
+[Section1へのリンクはこんな感じです](@ref s1)
+\endcode
+
+\subsection outer_link ページ外リンク
+普通のURLを使用して，そのページヘのリンクも貼ることが可能です．
+
+[doxygen.jp](http://www.doxygen.jp/)
+
+\code
+[doxygen.jp](http://www.doxygen.jp/)
+\endcode
+
+<HR>
+
+\section sp_ex 特殊な表現
+
+\subsection special_expression 誇張表現
 
 \attention 注意すべきリスト
 \warning 警告
 \note 注意事項
 \todo TODO
+Related PagesにTODO Listが自動的に作られます
 \pre    前提条件
 \post   事後条件
 \bug    バグ
+Related PagesにBUG Listが自動的に作られます
 
-\subsection expression The special expression
+\subsection expression 内容に関する表現
 
 \par A paragraph title
 これは段落です．この段落は空行もしくは，
 他のセクションの導入コマンドで終了します．
 
 \code{.sh}
-\par paragraph_title
+\par (paragraph title)
 \endcode
 
 \remarks
@@ -89,7 +131,7 @@
 \remarks
 \endcode
 
-\subsubsection font The fonts
+\subsubsection font フォント
 \li \a Italic 
 \li \b Bold   
 \li \c Type \c writer \c font (expressing code)
@@ -111,16 +153,25 @@
 \li リスト表示3
 \endcode
 
-\section misc The other expression
 
-\subsection hightlighting Code syntax highlighting
+\subsection misc その他の表現
+
+\subsubsection hightlighting ソースコードのシンタックスハイライト
 
 \code{.cpp}
 int main(void);
 \endcode
 
+(円マーク)code{.cpp}\n
+int main(void);\n
+(円マーク)endcode\n
+円マークのところをエンターキーの上にある円マークにしてください．
+もしくは，mainpage.dox内をご覧ください．
 
-\subsection dot Graphviz
+
+\subsubsection dot Graphviz
+プラント図やクラス図も簡単にかつ，綺麗に書くことができます．
+
 \dot
 digraph example {
 	node [shape=record, fontsize=10];
@@ -141,33 +192,68 @@ digraph example {
 \enddot
 \endcode
 
-\section md The Markdown support
+\subsubsection eqation 数式
 
-### 見出し
+1. インライン数式
+
+ \f$(x_1,y_1)\f$ と \f$(x_2,y_2)\f$ の間の距離は \f$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\f$。
+
+2. 中央揃えの番号なし数式
+
+  \f[
+    |I_2|=\left| \int_{0}^T \psi(t) 
+             \left\{ 
+                u(a,t)-
+                \int_{\gamma(t)}^a 
+                \frac{d\theta}{k(\theta,t)}
+                \int_{a}^\theta c(\xi)u_t(\xi,t)\,d\xi
+             \right\} dt
+          \right|
+  \f]
+
+3. latexコマンドを使用しての数式
+
+   \f{eqnarray*}{
+        g &=& \frac{Gm_2}{r^2} \\ 
+          &=& \frac{(6.673 \times 10^{-11}\,\mbox{m}^3\,\mbox{kg}^{-1}\,
+              \mbox{s}^{-2})(5.9736 \times 10^{24}\,\mbox{kg})}{(6371.01\,\mbox{km})^2} \\ 
+          &=& 9.82066032\,\mbox{m/s}^2
+   \f}
+
+<HR>
+
+\section md マークダウン
+マークダウンも使用できます．
+
+\subsection Header_md 見出し
 ヘッダにラベル付をすることができます．
 
 # h1 {#head1}
+
+\code 
+#h1 {#head1}
+\endcode
+{head1}はsectionでいうsection nameでページ内リンクを貼るときにURLのように
+参照できます．
+
 ## h2
+
+\code
+## h2
+\endcode
+通常のマークダウンと同じように{head2}なしでも使用できます．ただ，この場合はこの章に対する
+ページ内リンクは作成できません．
+
 ### h3
+
 #### h4
+
 #### h5
 
-### リンク
+## リンク
 webサイトへのリンクも，インラインリンクも，相対パスによる
 PC内部のhtmlへのリンクも可能です．
 
-[here](http://hello)
-
-~~~{.sh}
-[here](http://hello)
-~~~
-
-[The useful command](@ref s1)
-
-~~~{.sh}
-[The useful command](@ref s1)
-~~~
-
 [H1](#head1)
 
 ~~~{.sh}
@@ -175,7 +261,7 @@ PC内部のhtmlへのリンクも可能です．
 ~~~
 
 
-### リスト表示<markdown version Nest is available>
+## リスト表示<markdown version Nest is available>
 - list1
  - list1.1
 - list2
@@ -184,13 +270,17 @@ PC内部のhtmlへのリンクも可能です．
   - list3.2
    - list3.3
 
+1. first
+2. second
+3. third
+
 ### 引用
 > quate\n
 > quate\n
 > quate
 
 ### Code
-バッククオートではなく**チルダ**によりコードブロックを作成します．
+バッククオートではなくチルダによりコードブロックを作成します．
 
 ~~~{.cpp}
 int main(void)
@@ -200,10 +290,32 @@ int main(void)
 
 ---
 
-### 強調
-*a*
+\code 
+---
+\endcode
 
-\section edit The Editing
+<HR>
+
+\section html HTML
+
+ドキュメント内でHTMLタグを使用することも可能です．
+詳しくは[ここ](http://www.doxygen.jp/htmlcmds.html)を見てください．
+
+また，htmlonlyコマンドを使用すると，作成されるhtmlにhtmlコードを埋め込む
+ことが可能です．doxygenのバージョンにもよりますがhtml5に対応しています．
+
+\htmlonly
+<progress value="70" max="100">70 %</progress>
+\endhtmlonly
+
+\code{.html}
+\htmlonly
+<progress value="70" max="100">70 %</progress>
+\endhtmlonly
+\endcode
+
+
+\section edit 編集に際して
 Type the following command, when dox file is edited.
 
 The command makes doxygen command is run every 10 sec.
