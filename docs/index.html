@@ -141,7 +141,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <h1><a class="anchor" id="s_how_to_write"></a>
 doxygenの書き方</h1>
 <p>doxygenに文章を追加する方法はソースコードにコメントを書く方法以外に 文章を表すdoxという拡張子を使用します． また，doxの中身はdoxygenのコメントから文章を作成するという特性上， すべてコメントアウトされていなければなりません． 何を行っているかわからないかもしれませんが， 要は，example.doxというファイルがあったとして，その中身は</p>
-<div class="fragment"><div class="line"></div></div><!-- fragment --><p>としなければならないということです． ページとはhtmlにコンパイルした時の実際のページのことです． １つのmainpageとその他複数のpageから成り立っています． リンクとは，doxygenでは各ページや各セクションにURLが付与され，ページ内リンクを 作成することが可能で,そのときにURLの代わりに使用されるユーザー定義の文字列のことです．．</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;/**</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;自由にリンク，ページ名を設定</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;\page link_example example</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;ここに自由に文章を記述</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; */</div></div><!-- fragment --><p>としなければならないということです． ページとはhtmlにコンパイルした時の実際のページのことです． １つのmainpageとその他複数のpageから成り立っています． リンクとは，doxygenでは各ページや各セクションにURLが付与され，ページ内リンクを 作成することが可能で,そのときにURLの代わりに使用されるユーザー定義の文字列のことです．．</p>
 <hr/>
 <h1><a class="anchor" id="abst"></a>
 概要</h1>

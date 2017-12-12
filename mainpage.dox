@@ -22,7 +22,7 @@ doxygenに文章を追加する方法はソースコードにコメントを書�
 何を行っているかわからないかもしれませんが，
 要は，example.doxというファイルがあったとして，その中身は
 
-\code
+\code{.sh}
 /**
 
 自由にリンク，ページ名を設定
@@ -251,7 +251,8 @@ digraph example {
 <HR>
 
 \section md マークダウン
-マークダウンも使用できます．
+ここでは，マークダウンの記法をすべて紹介することはありませんが，
+大体すべてのマークダウンの記法を使用できます．
 
 \subsection Header_md 見出し
 ヘッダにラベル付をすることができます．
@@ -322,6 +323,22 @@ int main(void)
 ---
 \endcode
 
+### テーブル
+
+|Table|Table|
+|-----|-----|
+|table|table|
+|chair|chair|
+|desk |desk |
+
+\code{.md}
+|Table|Table|
+|-----|-----|
+|table|table|
+|chair|chair|
+|desk |desk |
+\endcode{.md}
+
 <HR>
 
 \section html HTML
@@ -331,6 +348,9 @@ int main(void)
 
 また，htmlonlyコマンドを使用すると，作成されるhtmlにhtmlコードを埋め込む
 ことが可能です．doxygenのバージョンにもよりますがhtml5に対応しています．
+したがって，audioタグやvideoタグを使用すれば，音楽や動画もいけるはずです．
+下の例ではプログレスバーを表示してみました.
+
 
 \htmlonly
 <progress value="70" max="100">70 %</progress>
@@ -344,9 +364,10 @@ int main(void)
 
 
 \section edit 編集に際して
-Type the following command, when dox file is edited.
-
-The command makes doxygen command is run every 10 sec.
+編集時に以下のコマンドを叩いておくと，10秒ごとにdoxygenがコンパイルされます．
+あとはfirefoxなどで生成されたhtmlを表示し，適当に更新ボタンを押すと，編集中の
+doxファイルを見ることができます．firefoxのプラグインでローカルのファイルが変更されたら
+逐次更新して表示するというものがあったので，それを導入してもいいかもしれませんね．
 
 \code{.shell}
 watch -n 10 doxygen Doxyfile
