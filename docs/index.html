@@ -102,58 +102,87 @@ $(document).ready(function(){initNavTree('index.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#s1">Section1</a><ul><li class="level2"><a href="#s2">Subsection2</a><ul><li class="level3"><a href="#s3">Subsubsection3</a></li>
+<ul><li class="level1"><a href="#abst">概要</a></li>
+<li class="level1"><a href="#section_explanation">セクション</a></li>
+<li class="level1"><a href="#s1">Section1</a><ul><li class="level2"><a href="#s2">Subsection2</a><ul><li class="level3"><a href="#s3">Subsubsection3</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="level1"><a href="#sp_ex">The special expression</a><ul><li class="level2"><a href="#special_expression">The special expression</a></li>
-<li class="level2"><a href="#expression">The special expression</a><ul><li class="level3"><a href="#font">The fonts</a></li>
+<li class="level1"><a href="#link">リンク</a><ul><li class="level2"><a href="#internal_link">ページ内リンク</a></li>
+<li class="level2"><a href="#outer_link">ページ外リンク</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#sp_ex">特殊な表現</a><ul><li class="level2"><a href="#special_expression">誇張表現</a></li>
+<li class="level2"><a href="#expression">内容に関する表現</a><ul><li class="level3"><a href="#font">フォント</a></li>
 <li class="level3"><a href="#list">list&lt;doxygen version | Nest is not available&gt;</a></li>
 </ul>
 </li>
+<li class="level2"><a href="#misc">その他の表現</a><ul><li class="level3"><a href="#hightlighting">ソースコードのシンタックスハイライト</a></li>
+<li class="level3"><a href="#dot">Graphviz</a></li>
+<li class="level3"><a href="#eqation">数式</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#misc">The other expression</a><ul><li class="level2"><a href="#hightlighting">Code syntax highlighting</a></li>
-<li class="level2"><a href="#dot">Graphviz</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#md">The Markdown support</a></li>
-<li class="level1"><a href="#edit">The Editing</a></li>
+<li class="level1"><a href="#md">マークダウン</a><ul><li class="level2"><a href="#Header_md">見出し</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#html">HTML</a></li>
+<li class="level1"><a href="#edit">編集に際して</a></li>
 <li class="level1"><a href="#css">extra css</a></li>
 <li class="level1"><a href="#head1">h1</a></li>
 </ul>
 </div>
-<div class="textblock"><p>Brief explanation ここに簡単な説明が入ります． このページは研究結果をまとめるためのにdoxygenを乱用するための 使い方をまとめたものです．<br />
-</p>
-<p>Detail explanation ここに詳しい説明が入ります． 研究結果をまとめるときによく使いそうなコマンドが以下にまとめられています． もし，面白い情報やより，説明がわかりやすくなりそうなコマンドが あったら，順次追加していく予定です．</p>
-<dl class="section author"><dt>Author</dt><dd>Harumo Sasatake</dd></dl>
+<div class="textblock"><p>ここに簡単な説明が入ります． このページは研究結果をまとめるためのにdoxygenを乱用するための 使い方をまとめたものです．</p>
+<p>研究結果をまとめるときによく使いそうなコマンドが以下にまとめられています． もし，面白い情報やより，説明がわかりやすくなりそうなコマンドが あったら，順次追加していく予定です．</p>
+<hr/>
+<h1><a class="anchor" id="abst"></a>
+概要</h1>
+<p>TOC Table of Contents. つまり目次が作られます． </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[TOC]</div></div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Harumo Sasatake</dd></dl>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\author Harumo Sasatake</div></div><!-- fragment --><dl class="section version"><dt>Version</dt><dd>1.0</dd></dl>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\version version num</div></div><!-- fragment --><dl class="section date"><dt>Date</dt><dd>2017-8-16</dd></dl>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\date 2017-*-**</div></div><!-- fragment --><dl class="section copyright"><dt>Copyright</dt><dd>GPL/LGPL/MIT</dd></dl>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\copyright ***</div></div><!-- fragment --><h1><a class="anchor" id="s1"></a>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\copyright ***</div></div><!-- fragment --><hr/>
+<h1><a class="anchor" id="section_explanation"></a>
+セクション</h1>
+<p>sectionコマンドにより，文章内を章，節などに分類することができます． 大きさはsubsubsectionまで使用できます．</p>
+<h1><a class="anchor" id="s1"></a>
 Section1</h1>
-<div class="fragment"><div class="line">@section &lt;section name&gt; (section title)</div></div><!-- fragment --><h2><a class="anchor" id="s2"></a>
+<div class="fragment"><div class="line">\section s1 Section1</div></div><!-- fragment --><p>s1はページ内リンクを貼るときのURLとして使えます． そのため，同じものが２つあってはいけません． <a class="el" href="index.html#s1">Section1へのリンクはこんな感じです</a> Section1は章のタイトルです．自由に付けましょう.</p>
+<h2><a class="anchor" id="s2"></a>
 Subsection2</h2>
-<div class="fragment"><div class="line">@subsection &lt;section name&gt; (section title)</div></div><!-- fragment --><h3><a class="anchor" id="s3"></a>
+<div class="fragment"><div class="line">\subsection &lt;section name&gt; (section title)</div></div><!-- fragment --><h3><a class="anchor" id="s3"></a>
 Subsubsection3</h3>
-<div class="fragment"><div class="line">@subsubsection &lt;section name&gt; (section title)</div></div><!-- fragment --><h1><a class="anchor" id="sp_ex"></a>
-The special expression</h1>
+<div class="fragment"><div class="line">\subsubsection &lt;section name&gt; (section title)</div></div><!-- fragment --><hr/>
+<h1><a class="anchor" id="link"></a>
+リンク</h1>
+<h2><a class="anchor" id="internal_link"></a>
+ページ内リンク</h2>
+<p>sectionコマンドの&lt;section name&gt;をURLのように使用して ページ内リンクを貼ることができます．</p>
+<p><a class="el" href="index.html#s1">Section1へのリンクはこんな感じです</a></p>
+<div class="fragment"><div class="line">[Section1へのリンクはこんな感じです](@ref s1)</div></div><!-- fragment --><h2><a class="anchor" id="outer_link"></a>
+ページ外リンク</h2>
+<p>普通のURLを使用して，そのページヘのリンクも貼ることが可能です．</p>
+<p><a href="http://www.doxygen.jp/">doxygen.jp</a></p>
+<div class="fragment"><div class="line">[doxygen.jp](http:<span class="comment">//www.doxygen.jp/)</span></div></div><!-- fragment --><hr/>
+<h1><a class="anchor" id="sp_ex"></a>
+特殊な表現</h1>
 <h2><a class="anchor" id="special_expression"></a>
-The special expression</h2>
+誇張表現</h2>
 <dl class="section attention"><dt>Attention</dt><dd>注意すべきリスト </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>警告 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>注意事項 </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>TODO </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>TODO Related PagesにTODO Listが自動的に作られます </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>前提条件 </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>事後条件 </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>バグ</dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>バグ Related PagesにBUG Listが自動的に作られます</dd></dl>
 <h2><a class="anchor" id="expression"></a>
-The special expression</h2>
+内容に関する表現</h2>
 <dl class="section user"><dt>A paragraph title</dt><dd>これは段落です．この段落は空行もしくは， 他のセクションの導入コマンドで終了します．</dd></dl>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\par paragraph_title</div></div><!-- fragment --><dl class="section remark"><dt>Remarks</dt><dd>これは注釈です．この注釈を記述するための段落は， 空行，もしくは他のセクションの導入コマンドで終了します．</dd></dl>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\par (paragraph title)</div></div><!-- fragment --><dl class="section remark"><dt>Remarks</dt><dd>これは注釈です．この注釈を記述するための段落は， 空行，もしくは他のセクションの導入コマンドで終了します．</dd></dl>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\remarks</div></div><!-- fragment --><h3><a class="anchor" id="font"></a>
-The fonts</h3>
+フォント</h3>
 <ul>
 <li><em>Italic</em> </li>
 <li><b>Bold</b> </li>
@@ -166,32 +195,57 @@ list&lt;doxygen version | Nest is not available&gt;</h3>
 <li>リスト表示2 </li>
 <li>リスト表示3</li>
 </ul>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\li リスト表示1</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;\li リスト表示2</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;\li リスト表示3</div></div><!-- fragment --><h1><a class="anchor" id="misc"></a>
-The other expression</h1>
-<h2><a class="anchor" id="hightlighting"></a>
-Code syntax highlighting</h2>
-<div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>);</div></div><!-- fragment --><h2><a class="anchor" id="dot"></a>
-Graphviz</h2>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\li リスト表示1</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;\li リスト表示2</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;\li リスト表示3</div></div><!-- fragment --><h2><a class="anchor" id="misc"></a>
+その他の表現</h2>
+<h3><a class="anchor" id="hightlighting"></a>
+ソースコードのシンタックスハイライト</h3>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>);</div></div><!-- fragment --><p>(円マーク)code{.cpp}<br />
+int main(void);<br />
+(円マーク)endcode<br />
+円マークのところをエンターキーの上にある円マークにしてください． もしくは，mainpage.dox内をご覧ください．</p>
+<h3><a class="anchor" id="dot"></a>
+Graphviz</h3>
+<p>プラント図やクラス図も簡単にかつ，綺麗に書くことができます．</p>
 <div align="center">
 <img src="dot_inline_dotgraph_1.png" alt="dot_inline_dotgraph_1.png" border="0" usemap="#dot_inline_dotgraph_1.map"/>
 <map name="dot_inline_dotgraph_1.map" id="dot_inline_dotgraph_1.map"></map>
 </div>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\dot</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;digraph example {</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    node [shape=record, fontsize=10];</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    b [ label=&quot;class B&quot;];</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    c [ label=&quot;class C&quot;];</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    b -&gt; c [arrowhead=&quot;open&quot;, style=&quot;dashed&quot;];</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;\enddot</div></div><!-- fragment --><h1><a class="anchor" id="md"></a>
-The Markdown support</h1>
-<h3>見出し</h3>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\dot</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;digraph example {</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    node [shape=record, fontsize=10];</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    b [ label=&quot;class B&quot;];</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    c [ label=&quot;class C&quot;];</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    b -&gt; c [arrowhead=&quot;open&quot;, style=&quot;dashed&quot;];</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;\enddot</div></div><!-- fragment --><h3><a class="anchor" id="eqation"></a>
+数式</h3>
+<ol type="1">
+<li><p class="startli">インライン数式</p>
+<p class="startli"><img class="formulaInl" alt="$(x_1,y_1)$" src="form_0.png"/> と <img class="formulaInl" alt="$(x_2,y_2)$" src="form_1.png"/> の間の距離は <img class="formulaInl" alt="$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$" src="form_2.png"/>。</p>
+</li>
+<li><p class="startli">中央揃えの番号なし数式</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[ |I_2|=\left| \int_{0}^T \psi(t) \left\{ u(a,t)- \int_{\gamma(t)}^a \frac{d\theta}{k(\theta,t)} \int_{a}^\theta c(\xi)u_t(\xi,t)\,d\xi \right\} dt \right| \]" src="form_3.png"/>
+</p>
+</li>
+<li><p class="startli">latexコマンドを使用しての数式</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{eqnarray*} g &amp;=&amp; \frac{Gm_2}{r^2} \\ &amp;=&amp; \frac{(6.673 \times 10^{-11}\,\mbox{m}^3\,\mbox{kg}^{-1}\, \mbox{s}^{-2})(5.9736 \times 10^{24}\,\mbox{kg})}{(6371.01\,\mbox{km})^2} \\ &amp;=&amp; 9.82066032\,\mbox{m/s}^2 \end{eqnarray*}" src="form_4.png"/>
+</p>
+</li>
+</ol>
+<hr/>
+<h1><a class="anchor" id="md"></a>
+マークダウン</h1>
+<p>マークダウンも使用できます．</p>
+<h2><a class="anchor" id="Header_md"></a>
+見出し</h2>
 <p>ヘッダにラベル付をすることができます．</p>
 <h1><a class="anchor" id="head1"></a>
 h1</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#h1 {#head1}</span></div></div><!-- fragment --><p> {head1}はsectionでいうsection nameでページ内リンクを貼るときにURLのように 参照できます．</p>
 <h2>h2</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">## h2</span></div></div><!-- fragment --><p> 通常のマークダウンと同じように{head2}なしでも使用できます．ただ，この場合はこの章に対する ページ内リンクは作成できません．</p>
 <h3>h3</h3>
 <h4>h4</h4>
 <h4>h5</h4>
-<h3>リンク</h3>
+<h2>リンク</h2>
 <p>webサイトへのリンクも，インラインリンクも，相対パスによる PC内部のhtmlへのリンクも可能です．</p>
-<p><a href="http://hello">here</a></p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[here](http://hello)</div></div><!-- fragment --><p><a class="el" href="index.html#s1">The useful command</a></p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[The useful command](@ref s1)</div></div><!-- fragment --><p><a href="#head1">H1</a></p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[H1](#head1)</div></div><!-- fragment --><h3>リスト表示&lt;markdown version Nest is available&gt;</h3>
+<p><a href="#head1">H1</a></p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[H1](#head1)</div></div><!-- fragment --><h2>リスト表示&lt;markdown version Nest is available&gt;</h2>
 <ul>
 <li>list1<ul>
 <li>list1.1</li>
@@ -209,6 +263,11 @@ h1</h1>
 </ul>
 </li>
 </ul>
+<ol type="1">
+<li>first</li>
+<li>second</li>
+<li>third</li>
+</ol>
 <h3>引用</h3>
 <blockquote class="doxtable">
 <p>quate<br />
@@ -216,13 +275,19 @@ quate<br />
 quate </p>
 </blockquote>
 <h3>Code</h3>
-<p>バッククオートではなく**チルダ**によりコードブロックを作成します．</p>
+<p>バッククオートではなくチルダによりコードブロックを作成します．</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div></div><!-- fragment --><h3>水平線</h3>
 <hr/>
-<h3>強調</h3>
-<p>a*</p>
-<h1><a class="anchor" id="edit"></a>
-The Editing</h1>
+<div class="fragment"><div class="line">---</div></div><!-- fragment --><hr/>
+<h1><a class="anchor" id="html"></a>
+HTML</h1>
+<p>ドキュメント内でHTMLタグを使用することも可能です． 詳しくは<a href="http://www.doxygen.jp/htmlcmds.html">ここ</a>を見てください．</p>
+<p>また，htmlonlyコマンドを使用すると，作成されるhtmlにhtmlコードを埋め込む ことが可能です．doxygenのバージョンにもよりますがhtml5に対応しています．</p>
+<p> 
+<progress value="70" max="100">70 %</progress>
+</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;\htmlonly</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;&lt;progress value=&quot;70&quot; max=&quot;100&quot;&gt;70 %&lt;/progress&gt;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;\endhtmlonly</div></div><!-- fragment --><h1><a class="anchor" id="edit"></a>
+編集に際して</h1>
 <p>Type the following command, when dox file is edited.</p>
 <p>The command makes doxygen command is run every 10 sec.</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;watch -n 10 doxygen Doxyfile</div></div><!-- fragment --><h1><a class="anchor" id="css"></a>

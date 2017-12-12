@@ -2,24 +2,34 @@ var NAVTREE =
 [
   [ "test", "index.html", [
     [ "A Main page", "index.html", [
+      [ "概要", "index.html#abst", null ],
+      [ "セクション", "index.html#section_explanation", null ],
       [ "Section1", "index.html#s1", [
         [ "Subsection2", "index.html#s2", [
           [ "Subsubsection3", "index.html#s3", null ]
         ] ]
       ] ],
-      [ "The special expression", "index.html#sp_ex", [
-        [ "The special expression", "index.html#special_expression", null ],
-        [ "The special expression", "index.html#expression", [
-          [ "The fonts", "index.html#font", null ],
+      [ "リンク", "index.html#link", [
+        [ "ページ内リンク", "index.html#internal_link", null ],
+        [ "ページ外リンク", "index.html#outer_link", null ]
+      ] ],
+      [ "特殊な表現", "index.html#sp_ex", [
+        [ "誇張表現", "index.html#special_expression", null ],
+        [ "内容に関する表現", "index.html#expression", [
+          [ "フォント", "index.html#font", null ],
           [ "list<doxygen version | Nest is not available>", "index.html#list", null ]
+        ] ],
+        [ "その他の表現", "index.html#misc", [
+          [ "ソースコードのシンタックスハイライト", "index.html#hightlighting", null ],
+          [ "Graphviz", "index.html#dot", null ],
+          [ "数式", "index.html#eqation", null ]
         ] ]
       ] ],
-      [ "The other expression", "index.html#misc", [
-        [ "Code syntax highlighting", "index.html#hightlighting", null ],
-        [ "Graphviz", "index.html#dot", null ]
+      [ "マークダウン", "index.html#md", [
+        [ "見出し", "index.html#Header_md", null ]
       ] ],
-      [ "The Markdown support", "index.html#md", null ],
-      [ "The Editing", "index.html#edit", null ],
+      [ "HTML", "index.html#html", null ],
+      [ "編集に際して", "index.html#edit", null ],
       [ "extra css", "index.html#css", null ],
       [ "h1", "index.html#head1", null ]
     ] ],
@@ -28,6 +38,7 @@ var NAVTREE =
       [ "My page", "mypage.html", null ]
     ] ],
     [ "mypage", "mypage.html", null ],
+    [ "Doxygenで文書作成!?", "md_README.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Bug List", "bug.html", null ]
   ] ]
